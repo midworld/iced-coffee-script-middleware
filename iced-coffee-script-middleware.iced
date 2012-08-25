@@ -32,7 +32,7 @@ exports.middleware = (options) ->
 		return (next err) if err
 
 		try
-			jsSrc = icedCoffeeScript.compile icedSrc, {}
+			jsSrc = icedCoffeeScript.compile icedSrc, { runtime: 'inline' }
 		catch compileErr
 			return (next compileErr)
 
